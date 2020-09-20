@@ -1,0 +1,36 @@
+.AppParent {
+  width: 600px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+}
+.App {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 10px;
+  cursor: pointer;
+}
+.App h3 {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.App .form-control {
+  padding: 5px 0;
+  display: flex;
+}
+
+.App .form-control label {
+  width: 140px;
+}
+.App .form-control input {
+  flex: 1;
+  border: 1px solid #999;
+  padding: 5px;
+  box-sizing: border-box;
+}
+input:focus {
+  outline: none;
+}
