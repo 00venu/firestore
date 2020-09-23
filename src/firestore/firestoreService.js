@@ -26,3 +26,24 @@ export function getDataFromFirestore() {
 export function getDocFromFirestore(docId) {
   return db.collection("data").doc(docId);
 }
+
+export function addDocToFirestore(newData) {
+  return db.collection("data").add({
+    ...newData,
+    date: firebase.firestore.Timestamp.fromDate(newData.date),
+  });
+}
+
+export function updateDocToFirestore(newData) {
+  return db
+    .collection("data")
+    .doc(newData.id)
+    .update({
+      ...newData,
+      date: new Date(newData.date),
+    });
+}
+
+export function deleteDocFromFirestore(docId) {
+  return db.collection("data").doc(docId).delete();
+}

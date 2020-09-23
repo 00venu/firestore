@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getDataFromFirestore } from "../firestore/firestoreService";
@@ -10,6 +10,7 @@ import useFirestoreCollection from "../hooks/useFirestoreCollection";
 function ItemPage(props) {
   const data = useSelector((state) => state.data.data);
   let loading = useSelector((state) => state.data.loading);
+  // console.log(data);
   const dispatch = useDispatch();
   useFirestoreCollection({
     query: () => getDataFromFirestore(),
@@ -30,11 +31,7 @@ function ItemPage(props) {
     test.push(<Placeholder key={i} />);
   }
 
-  return (
-    <div className="AppParent">
-      {loading ? test.map((item) => item) : items}
-    </div>
-  );
+  return <Fragment>{loading ? test.map((item) => item) : items}</Fragment>;
 }
 
 export default ItemPage;

@@ -1,8 +1,9 @@
 .AppParent {
-  width: 600px;
+  width: 800px;
   margin: auto;
   padding: 30px;
   display: flex;
+  flex-wrap: wrap;
 }
 .App {
   width: 200px;
